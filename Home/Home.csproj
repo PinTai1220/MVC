@@ -127,15 +127,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig2.cs" />
+    <Compile Include="App_Start\BundleConfig3.cs" />
+    <Compile Include="App_Start\BundleConfig4.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\FilterConfig2.cs" />
+    <Compile Include="App_Start\FilterConfig3.cs" />
+    <Compile Include="App_Start\FilterConfig4.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\RouteConfig2.cs" />
+    <Compile Include="App_Start\RouteConfig3.cs" />
+    <Compile Include="App_Start\RouteConfig4.cs" />
     <Compile Include="Controllers\AddressInfoController.cs" />
-    <Compile Include="Controllers\BuyCarInfoController.cs" />
+    <Compile Include="Controllers\AdministratorController.cs" />
+    <Compile Include="Controllers\CourierController.cs" />
     <Compile Include="Controllers\GoodsInfoController.cs" />
     <Compile Include="Controllers\GoodTypeInfoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderInfoController.cs" />
-    <Compile Include="Controllers\ReceivInfoController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -186,11 +196,14 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\AddressInfo\" />
+    <Folder Include="Views\Administrator\" />
     <Folder Include="Views\BuyCarInfo\" />
+    <Folder Include="Views\Courier\" />
     <Folder Include="Views\GoodsInfo\" />
     <Folder Include="Views\GoodTypeInfo\" />
     <Folder Include="Views\OrderInfo\" />
     <Folder Include="Views\ReceivInfo\" />
+    <Folder Include="Views\ShoppingCart\" />
     <Folder Include="Views\UserInfo\" />
   </ItemGroup>
   <ItemGroup>

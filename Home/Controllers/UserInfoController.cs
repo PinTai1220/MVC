@@ -11,6 +11,10 @@ namespace Home.Controllers
 {
     public class UserInfoController : Controller
     {
+        /// <summary>
+        /// 用户表控制器
+        /// </summary>
+        /// <returns></returns>
         // GET: UserInfo
         public ActionResult Index()
         {

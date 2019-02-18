@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Newtonsoft.Json;
 
 namespace Home.Controllers
 {
-    public class BuyCarInfoController : Controller
+    public class CourierController : Controller
     {
-        // GET: BuyCarInfo
+        /// <summary>
+        /// 快递表控制器
+        /// </summary>
+        /// <returns></returns>
+        // GET: Courier
         public ActionResult Index()
         {
             return View();

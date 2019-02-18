@@ -9,6 +9,10 @@ namespace Home.Controllers
 {
     public class GoodTypeInfoController : Controller
     {
+        /// <summary>
+        /// 商品分类控制器
+        /// </summary>
+        /// <returns></returns>
         // GET: GoodTypeInfo
         public ActionResult Index()
         {

@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Newtonsoft.Json;
 
 namespace Home.Controllers
 {
-    public class ReceivInfoController : Controller
+    public class ShoppingCartController : Controller
     {
-        // GET: ReceivInfo
+        /// <summary>
+        /// 购物车控制器
+        /// </summary>
+        /// <returns></returns>
+        // GET: ShoppingCart
         public ActionResult Index()
         {
             return View();

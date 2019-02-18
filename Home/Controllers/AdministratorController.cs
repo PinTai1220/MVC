@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Newtonsoft.Json;
 
 namespace Home.Controllers
 {
-    public class OrderInfoController : Controller
+    public class AdministratorController : Controller
     {
         /// <summary>
-        /// 订单控制器
+        /// 管理员控制器
         /// </summary>
         /// <returns></returns>
-        // GET: OrderInfo
+        // GET: Administrator
         public ActionResult Index()
         {
+
             return View();
         }
     }
