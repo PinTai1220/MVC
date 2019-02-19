@@ -7,6 +7,7 @@ namespace Home.Models
 {
     public class AddressInfo
     {
+        //地址
         public int AddressId { get; set; }
         /// <summary>
         /// 地点名称

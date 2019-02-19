@@ -7,6 +7,7 @@ namespace Home.Models
 {
     public class TakeGoodsInfo
     {
+        //收货信息
         public int TGId { get; set; }
         /// <summary>
         /// 用户id

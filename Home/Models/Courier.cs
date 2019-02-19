@@ -7,6 +7,7 @@ namespace Home.Models
 {
     public class Courier
     {
+        //快递表
         public int CourierId { get; set; }
         /// <summary>
         /// 订单id

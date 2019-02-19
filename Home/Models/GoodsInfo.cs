@@ -7,6 +7,7 @@ namespace Home.Models
 {
     public class GoodsInfo
     {
+        //商品
         public int GoodId { get; set; }
         /// <summary>
         /// 商品名称

@@ -7,6 +7,7 @@ namespace Home.Models
 {
     public class GoodType
     {
+        //商品分类
         public int GoodTypeId { get; set; }
         //类型名称
         public string GoodTypeName { get; set; }

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Home.Models;
+using Home.Helpers;
+using Newtonsoft.Json;
 
 namespace Home.Controllers
 {
@@ -15,7 +18,9 @@ namespace Home.Controllers
         // GET: Courier
         public ActionResult Index()
         {
-            return View();
+            string json = HttpClientHelper.SendRequest("api/", "Get");
+            List<Courier> attday = JsonConvert.DeserializeObject<List<Courier>>(json);
+            return View(attday);
         }
     }
 }

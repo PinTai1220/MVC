@@ -7,6 +7,7 @@ namespace Home.Models
 {
     public class OrderInfo
     {
+        //订单表
         public int OrderId { get; set; }
         /// <summary>
         /// 订单号（日期yyyyMMddhhmmss）

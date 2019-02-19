@@ -7,6 +7,7 @@ namespace Home.Models
 {
     public class Administrator
     {
+        //管理员
         public int AdministratorId { get; set; }
         /// <summary>
         /// 账号

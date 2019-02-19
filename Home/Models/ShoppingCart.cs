@@ -7,6 +7,7 @@ namespace Home.Models
 {
     public class ShoppingCart
     {
+        //购物车
         public int ShoppingCartId { get; set; }
         /// <summary>
         /// 用户id

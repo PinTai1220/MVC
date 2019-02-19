@@ -7,6 +7,7 @@ namespace Home.Models
 {
     public class UserInfo
     {
+        //用户表
         public int UserId { get; set; }
         /// <summary>
         /// 账号
