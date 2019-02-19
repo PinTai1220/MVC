@@ -50,7 +50,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http.Formatting">
-      <HintPath>..\..\file\WebApi封装的方法\System.Net.Http.Formatting.dll</HintPath>
+      <HintPath>..\bin\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
