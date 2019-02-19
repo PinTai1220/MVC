@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Home.Models.UserInfo>
+@{
+    ViewBag.Title = "UserIndex";
+    Layout = "~/Views/Shared/ParentView.cshtml";
+}
+
+<h2>UserIndex</h2>
+<table>
+    <thead>
+        <tr>
+            <th>头像</th>
+            <th>用户名</th>
+            <th>昵称</th>
+            <th>手机号</th>
+            <th>邮箱</th>
+            <th>性别</th>
+            <th>创建时间</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PhotoPath</td>
+            <td>@item.UserName</td>
+            <td>@item.UserAccount</td>
+            <td>@item.PhoneNumber</td>
+            <td>@item.Email</td>
+            <td>@item.Sex</td>
+            <td>@item.UserCraeteTime</td>
+        </tr>
+    }
+</table>

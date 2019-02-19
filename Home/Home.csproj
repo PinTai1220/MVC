@@ -150,6 +150,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\HttpClientHelper.cs" />
+    <Compile Include="Models\AddressInfo.cs" />
+    <Compile Include="Models\Administrator.cs" />
+    <Compile Include="Models\Courier.cs" />
+    <Compile Include="Models\GoodsInfo.cs" />
+    <Compile Include="Models\GoodType.cs" />
+    <Compile Include="Models\OrderInfo.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
+    <Compile Include="Models\TakeGoodsInfo.cs" />
+    <Compile Include="Models\UserInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +187,32 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Scripts\vendor\chart.js\chart.js" />
+    <Content Include="Scripts\vendor\chart.js\chart.min.js" />
+    <Content Include="Scripts\vendor\css\styles.css" />
+    <Content Include="Scripts\vendor\font-awesome\css\fa-brands.css" />
+    <Content Include="Scripts\vendor\font-awesome\css\fa-brands.min.css" />
+    <Content Include="Scripts\vendor\font-awesome\css\fa-regular.css" />
+    <Content Include="Scripts\vendor\font-awesome\css\fa-regular.min.css" />
+    <Content Include="Scripts\vendor\font-awesome\css\fa-solid.css" />
+    <Content Include="Scripts\vendor\font-awesome\css\fa-solid.min.css" />
+    <Content Include="Scripts\vendor\font-awesome\css\fontawesome-all.css" />
+    <Content Include="Scripts\vendor\font-awesome\css\fontawesome-all.min.css" />
+    <Content Include="Scripts\vendor\font-awesome\css\fontawesome.css" />
+    <Content Include="Scripts\vendor\font-awesome\css\fontawesome.min.css" />
+    <Content Include="Scripts\vendor\font-awesome\webfonts\fa-brands-400.svg" />
+    <Content Include="Scripts\vendor\font-awesome\webfonts\fa-regular-400.svg" />
+    <Content Include="Scripts\vendor\font-awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Scripts\vendor\imgs\avatar-1.png" />
+    <Content Include="Scripts\vendor\imgs\logo.png" />
+    <Content Include="Scripts\vendor\jquery\jquery.js" />
+    <Content Include="Scripts\vendor\jquery\jquery.min.js" />
+    <Content Include="Scripts\vendor\js\carbon.js" />
+    <Content Include="Scripts\vendor\js\demo.js" />
+    <Content Include="Scripts\vendor\popper.js\popper.min.js" />
+    <Content Include="Scripts\vendor\simple-line-icons\css\simple-line-icons.css" />
+    <Content Include="Scripts\vendor\simple-line-icons\fonts\Simple-Line-Icons.svg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -191,10 +227,27 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\ParentView.cshtml" />
+    <Content Include="Scripts\vendor\font-awesome\webfonts\fa-brands-400.eot" />
+    <Content Include="Scripts\vendor\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="Scripts\vendor\font-awesome\webfonts\fa-brands-400.woff" />
+    <Content Include="Scripts\vendor\font-awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="Scripts\vendor\font-awesome\webfonts\fa-regular-400.eot" />
+    <Content Include="Scripts\vendor\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Scripts\vendor\font-awesome\webfonts\fa-regular-400.woff" />
+    <Content Include="Scripts\vendor\font-awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="Scripts\vendor\font-awesome\webfonts\fa-solid-900.eot" />
+    <Content Include="Scripts\vendor\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="Scripts\vendor\font-awesome\webfonts\fa-solid-900.woff" />
+    <Content Include="Scripts\vendor\font-awesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="Scripts\vendor\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="Scripts\vendor\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="Scripts\vendor\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="Scripts\vendor\simple-line-icons\fonts\Simple-Line-Icons.woff2" />
+    <Content Include="Views\UserInfo\UserIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\AddressInfo\" />
     <Folder Include="Views\Administrator\" />
     <Folder Include="Views\BuyCarInfo\" />
@@ -204,7 +257,6 @@
     <Folder Include="Views\OrderInfo\" />
     <Folder Include="Views\ReceivInfo\" />
     <Folder Include="Views\ShoppingCart\" />
-    <Folder Include="Views\UserInfo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

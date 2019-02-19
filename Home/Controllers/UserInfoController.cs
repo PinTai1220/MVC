@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
+using Home.Helpers;
+using Home.Models;
 
 namespace Home.Controllers
 {
@@ -18,7 +20,9 @@ namespace Home.Controllers
         // GET: UserInfo
         public ActionResult Index()
         {
-            return View();
+            string json = HttpClientHelper.SendRequest("api/APIAttendance", "Get");
+            List<UserInfo> attday = JsonConvert.DeserializeObject<List<UserInfo>>(json);
+            return View(attday);
         }
 
 
