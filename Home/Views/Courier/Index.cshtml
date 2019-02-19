@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Home.Models.Courier>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/ParentView.cshtml";
+}
+
+<h2>Index</h2>
+<table>
+    <thead>
+        <tr>
+            <th>发货单号</th>
+            <th>货物信息</th>
+            <th>收货人</th>
+            <th>联系方式</th>
+            <th>收货地址</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.OID</td>
+            <td>@item.</td>
+        </tr>
+    }
+</table>
