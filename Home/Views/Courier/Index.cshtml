@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Home.Models.Courier>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/ParentView.cshtml";
+    List<object> sourse = ViewBag.att;
+}
+
+<h2>Index</h2>
+<table>
+    <thead>
+        <tr>
+            <th>编号</th>
+            <th>发货单号</th>
+            <th>订单id</th>
+            <th>收货人</th>
+            <th>联系方式</th>
+            <th>收货地址</th>
+            <th>订单号</th>
+            <th>商品名称</th>
+            <th>商品类型</th>
+            <th>图片路径</th>
+        </tr>
+    </thead>
+    @foreach (dynamic item in sourse)
+    {
+    <tr>
+        <td>@item.CourierId</td>
+        <td>@item.CourierNum</td>
+        <td>@item.OrderId</td>
+        <td>@item.OTGName</td>
+        <td>@item.OTGPhone</td>
+        <td>@item.OTGAddress</td>
+        <td>@item.OrderNum</td>
+        <td>@item.OGoodName</td>
+        <td>@item.GoodTypeName</td>
+        <td><img src="@item.PhotoPath" style="width:80px;height:80px;border-radius:50%" alt="Alternate Text" /></td>
+    </tr>
+    }
+</table>
