@@ -19,8 +19,9 @@ namespace Home.Controllers
         public ActionResult Index()
         {
             string json = HttpClientHelper.SendRequest("api/", "Get");
-            List<Courier> attday = JsonConvert.DeserializeObject<List<Courier>>(json);
-            return View(attday);
+            List<object> attday = JsonConvert.DeserializeObject<List<object>>(json);
+            ViewBag.att = attday;
+            return View();
         }
     }
 }

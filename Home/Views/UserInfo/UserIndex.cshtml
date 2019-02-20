@@ -20,7 +20,7 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>@item.PhotoPath</td>
+            <td><img src="@item.PhotoPath" style="width:80px;height:80px;border-radius:50%" alt="Alternate Text" /></td>
             <td>@item.UserName</td>
             <td>@item.UserAccount</td>
             <td>@item.PhoneNumber</td>

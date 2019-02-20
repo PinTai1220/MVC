@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/ParentView.cshtml";
+    List<object> sourse = ViewBag.att;
 }
 
 <h2>Index</h2>
@@ -15,11 +16,19 @@
             <th>收货地址</th>
         </tr>
     </thead>
-    @foreach (var item in Model)
+    @foreach (dynamic item in sourse)
     {
-        <tr>
-            <td>@item.OID</td>
-            <td>@item.</td>
-        </tr>
+    <tr>
+        <td>@item.CourierId</td>
+        <td>@item.CourierNum</td>
+        <td>@item.OrderId</td>
+        <td>@item.OTGName</td>
+        <td>@item.OTGPhone</td>
+        <td>@item.OTGAddress</td>
+        <td>@item.OrderNum</td>
+        <td>@item.OGoodName</td>
+        <td>@item.GoodTypeName</td>
+        <td>@item.GoodPhotoPath</td>
+    </tr>
     }
 </table>

@@ -157,6 +157,7 @@
     <Compile Include="Models\GoodsInfo.cs" />
     <Compile Include="Models\GoodType.cs" />
     <Compile Include="Models\OrderInfo.cs" />
+    <Compile Include="Models\SalesRecord.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Models\TakeGoodsInfo.cs" />
     <Compile Include="Models\UserInfo.cs" />

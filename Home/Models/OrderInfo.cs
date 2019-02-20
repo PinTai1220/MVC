@@ -25,5 +25,17 @@ namespace Home.Models
         /// 创建时间yyyy-MM-dd hh:mm:ss
         /// </summary>
         public string OrderCreateTime { get; set; }
+        /// <summary>
+        /// 收货人
+        /// </summary>
+        public string OTGName { get; set; }
+        /// <summary>
+        /// 联系方式
+        /// </summary>
+        public string OTGPhone { get; set; }
+        /// <summary>
+        /// 收货地址
+        /// </summary>
+        public string OTGAddress { get; set; }
     }
 }
