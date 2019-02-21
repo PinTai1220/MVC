@@ -573,13 +573,14 @@
     <Content Include="Scripts\ueditor\third-party\video-js\font\vjs.eot" />
     <Content Include="Scripts\ueditor\third-party\video-js\font\vjs.ttf" />
     <Content Include="Scripts\ueditor\third-party\video-js\font\vjs.woff" />
+    <Content Include="Views\GoodsInfo\GoodsIndex.cshtml" />
+    <Content Include="Views\OrderInfo\OrderIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\AddressInfo\" />
     <Folder Include="Views\Administrator\" />
     <Folder Include="Views\BuyCarInfo\" />
-    <Folder Include="Views\OrderInfo\" />
     <Folder Include="Views\ReceivInfo\" />
     <Folder Include="Views\SalesRecord\" />
     <Folder Include="Views\ShoppingCart\" />

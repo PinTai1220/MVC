@@ -7,15 +7,12 @@
 
 <h2>商品分类</h2>
 <table>
-    <tr>
-        <td><a href="#">沙发</a></td>
-        <td><a href="#">茶几</a></td>
-        <td><a href="#">椅子</a></td>
-        <td><a href="#">书架</a></td>
-        <td><a href="#">电脑椅</a></td>
-        <td><a href="#">床</a></td>
-        <td><a href="#">餐桌</a></td>
-        <td><a href="#">衣柜</a></td>
-    </tr>
+    @foreach (dynamic item in sourse)
+    {
+        <tr>
+            <td><a href="#">@item.GoodTypeName</a></td>
+        </tr>
+    }
+
 </table>
 

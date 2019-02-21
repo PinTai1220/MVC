@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
+using Home.Helpers;
+using Home.Models;
 
 namespace Home.Controllers
 {
@@ -16,6 +18,9 @@ namespace Home.Controllers
         // GET: GoodsInfo
         public ActionResult Index()
         {
+            string json = HttpClientHelper.SendRequest("api/", "Get");
+            List<object> attday = JsonConvert.DeserializeObject<List<object>>(json);
+            ViewBag.att = attday;
             return View();
         }
         public ActionResult AddGoods()
