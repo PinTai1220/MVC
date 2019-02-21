@@ -1,7 +1,8 @@
-﻿
+﻿@model IEnumerable<Home.Models.SalesRecord>
 @{
     ViewBag.Title = "ShowSales";
     Layout = "~/Views/Shared/ParentView.cshtml";
+    List<object> sourse = ViewBag.att;
 }
 
 <link href="~/Scripts/layui-v2.4.5/layui/css/layui.css" rel="stylesheet" />
@@ -15,6 +16,7 @@
     </colgroup>
     <thead>
         <tr>
+            <th>编号</th>
             <th>用户名称</th>
             <th>商品名称</th>
             <th>订单号</th>
@@ -25,28 +27,18 @@
             <th>创建时间</th>
         </tr>
     </thead>
-    <tbody>
+    @foreach (dynamic item in sourse)
+    {
         <tr>
-            <td>贤心</td>
-            <td>2016-11-29</td>
-            <td>人生就像是一场修行</td>
-            <td>许闲心</td>
-            <td>2016-11-28</td>
-            <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
-            <td>许闲心</td>
-            <td>2016-11-28</td>
+            <td>@item.SalesRecordId</td>
+            <td>@item.UserName</td>
+            <td>@item.GoodName</td>
+            <td>@item.OrderNum</td>
+            <td>@item.GoodPrice</td>
+            <td>@item.Num</td>
+            <td>@item.SumPrice</td>
+            <td>@item.SType</td>
+            <td>@item.SCreateTime</td>
         </tr>
-        <tr>
-        <tr>
-            <td>贤心</td>
-            <td>2016-11-29</td>
-            <td>人生就像是一场修行</td>
-            <td>许闲心</td>
-            <td>2016-11-28</td>
-            <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
-            <td>许闲心</td>
-            <td>2016-11-28</td>
-        </tr>
-        </tr>
-    </tbody>
+    }
 </table>

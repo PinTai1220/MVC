@@ -199,6 +199,17 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\layer-v3.1.1\layer\layer.js" />
+    <Content Include="Scripts\layer-v3.1.1\layer\mobile\layer.js" />
+    <Content Include="Scripts\layer-v3.1.1\layer\mobile\need\layer.css" />
+    <Content Include="Scripts\layer-v3.1.1\layer\theme\default\icon-ext.png" />
+    <Content Include="Scripts\layer-v3.1.1\layer\theme\default\icon.png" />
+    <Content Include="Scripts\layer-v3.1.1\layer\theme\default\layer.css" />
+    <Content Include="Scripts\layer-v3.1.1\layer\theme\default\loading-0.gif" />
+    <Content Include="Scripts\layer-v3.1.1\layer\theme\default\loading-1.gif" />
+    <Content Include="Scripts\layer-v3.1.1\layer\theme\default\loading-2.gif" />
+    <Content Include="Scripts\layer-v3.1.1\test.html" />
+    <Content Include="Scripts\layer-v3.1.1\更新日志.txt" />
     <Content Include="Scripts\layui-v2.4.5\layui\css\layui.css" />
     <Content Include="Scripts\layui-v2.4.5\layui\css\layui.mobile.css" />
     <Content Include="Scripts\layui-v2.4.5\layui\css\modules\code.css" />
@@ -690,13 +701,19 @@
     <Content Include="Scripts\layui-v2.4.5\文档与示例\快速上手.url" />
     <Content Include="Scripts\layui-v2.4.5\更新日志.url" />
     <Content Include="Views\Administrator\AdminLogin.cshtml" />
+    <Content Include="Views\GoodsInfo\GoodsIndex.cshtml" />
+    <Content Include="Scripts\layer-v3.1.1\文档\jquery下载.url" />
+    <Content Include="Scripts\layer-v3.1.1\文档\layer官网.url" />
+    <Content Include="Scripts\layer-v3.1.1\文档\layer文档.url" />
+    <Content Include="Scripts\layer-v3.1.1\文档\layui社区.url" />
+    <Content Include="Scripts\layer-v3.1.1\文档\获得layim.url" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\AddressInfo\" />
+    <Folder Include="Views\Administrator\" />
     <Folder Include="Views\BuyCarInfo\" />
     <Folder Include="Views\OrderInfo\" />
-    <Folder Include="Views\ReceivInfo\" />
     <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
   <ItemGroup>

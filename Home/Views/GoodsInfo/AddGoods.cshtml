@@ -1,12 +1,13 @@
 ﻿
 @{
-    ViewBag.Title = "上架商品";
+    ViewBag.Title = "下架商品";
     Layout = "~/Views/Shared/ParentView.cshtml";
 }
 <script src="~/Scripts/ueditor/jquery-form.js"></script>
 <script src="~/Scripts/ueditor/ueditor-upload.js"></script>
 <script src="~/Scripts/jquery-3.3.1.js"></script>
-<h2>上架商品</h2>
+<script src="~/Scripts/layer-v3.1.1/layer/layer.js"></script>
+<h2>下架商品</h2>
 <table>
     <tr>
         <td>商品图片</td>
@@ -42,7 +43,7 @@
         <td><label id="LbState"></label></td>
     </tr>
     <tr>
-        <td><input id="btnAdd" type="button" value="上架" onclick="Add()" /></td>
+        <td><input id="btnAdd" type="button" value="下架" onclick="down()" /></td>
     </tr>
 </table>
 <script>
@@ -60,13 +61,22 @@
     $(function () {
         $("txtPhoto").upload("/Scripts/ueditor/net/");
     })
-    function Add(data) {
-        if (data > 0) {
-            Backs();
-        }
-        else {
-            alert("上架失败，请重新检查");
-        }
+    function down(id) {
+        layer.confirm('是否将此商品下架？', {
+            btn: ['确定', '取消']
+        }, function () {
+            $.ajax({
+                url: "" + id,
+                async: false,
+                type: "post",
+                success: function () {
+                    layer.close(layer.index);
+                }
+            });
+        }, function () {
+
+            });
+        Backs();
     }
     function Backs() {
         setTimeout(function () {
@@ -77,7 +87,7 @@
                     $("#min").html(data);
                 }
             })
-        },500)
+        }, 500)
     }
 </script>
 
