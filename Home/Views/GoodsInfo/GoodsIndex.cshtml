@@ -1,21 +1,39 @@
 ﻿@model IEnumerable<Home.Models.GoodsInfo>
 @{
-    ViewBag.Title = "GoodsIndex";
+    ViewBag.Title = "商品显示";
     Layout = "~/Views/Shared/ParentView.cshtml";
+    List<object> sourse = ViewBag.att;
 }
 
-<h2>GoodsIndex</h2>
+<h2>商品显示</h2>
 <table>
-    @foreach (var item in Model)
-    {
+    <thead>
         <tr>
-            <td><img src="@item.GoodPhotoPath" alt="" /></td>
-            <td>@item.GoodName</td>
-            <td>@item.GoodSellSum</td>
-            <td>@item.GoodSum</td>
-            <td>@item.GoodPrice</td>
-            <td>@item.GoodState</td>
-            <td>@item.GoodCreateTime</td>
+            <th>编号</th>
+            <th>订单号</th>
+            <th>收货人</th>
+            <th>联系方式</th>
+            <th>收货地址</th>
+            <th>商品名称</th>
+            <th>购买数量</th>
+            <th>订单状态</th>
+            <th>商品状态</th>
+            <th>订单创建时间</th>
         </tr>
+    </thead>
+    @foreach (dynamic item in sourse)
+    {
+    <tr>
+        <td>@item.OrderId</td>
+        <td>@item.OrderNum</td>
+        <td>@item.OTGName</td>
+        <td>@item.OTGPhone</td>
+        <td>@item.OTGAddress</td>
+        <td>@item.OGoodName</td>
+        <td>@item.Num</td>
+        <td>@item.OrderState</td>
+        <td>@item.GoodState</td>
+        <td>@item.OrderCreateTime/td>
+    </tr>
     }
 </table>
