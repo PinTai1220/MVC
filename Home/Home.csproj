@@ -177,6 +177,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\index.css" />
+    <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -187,6 +189,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\index.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -697,6 +700,7 @@
     <Content Include="Scripts\layui-v2.4.5\文档与示例\在线示例.url" />
     <Content Include="Scripts\layui-v2.4.5\文档与示例\快速上手.url" />
     <Content Include="Scripts\layui-v2.4.5\更新日志.url" />
+    <Content Include="Views\Administrator\AdminLogin.cshtml" />
     <Content Include="Views\GoodsInfo\GoodsIndex.cshtml" />
     <Content Include="Scripts\layer-v3.1.1\文档\jquery下载.url" />
     <Content Include="Scripts\layer-v3.1.1\文档\layer官网.url" />
@@ -708,6 +712,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\AddressInfo\" />
     <Folder Include="Views\Administrator\" />
+    <Folder Include="Views\BuyCarInfo\" />
     <Folder Include="Views\OrderInfo\" />
     <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
