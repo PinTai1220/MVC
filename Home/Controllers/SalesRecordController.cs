@@ -8,9 +8,12 @@ namespace Home.Controllers
 {
     public class SalesRecordController : Controller
     {
-        //销售记录控制器
+        /// <summary>
+        /// 销售控制器
+        /// </summary>
+        /// <returns></returns>
         // GET: SalesRecord
-        public ActionResult Index()
+        public ActionResult ShowSales()
         {
             return View();
         }
