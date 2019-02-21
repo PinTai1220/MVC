@@ -708,9 +708,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\AddressInfo\" />
     <Folder Include="Views\Administrator\" />
-    <Folder Include="Views\BuyCarInfo\" />
     <Folder Include="Views\OrderInfo\" />
-    <Folder Include="Views\ReceivInfo\" />
     <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
   <ItemGroup>

@@ -16,9 +16,9 @@ namespace Home.Controllers
         /// </summary>
         /// <returns></returns>
         // GET: GoodsInfo
-        public ActionResult Index()
+        public ActionResult GoodsIndex()
         {
-            string json = HttpClientHelper.SendRequest("api/", "Get");
+            string json = HttpClientHelper.SendRequest("api/Courier/GetSum/?str=&IndexPage=1&IndexSize=8", "Get");
             List<object> attday = JsonConvert.DeserializeObject<List<object>>(json);
             ViewBag.att = attday;
             return View();
