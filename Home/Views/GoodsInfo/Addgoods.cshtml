@@ -1,85 +1,147 @@
 ﻿
 @{
-    Layout = null;
+    ViewBag.Title = "下架商品";
+    Layout = "~/Views/Shared/ParentView.cshtml";
 }
+<script src="~/Scripts/ueditor/jquery-form.js"></script>
+<script src="~/Scripts/ueditor/ueditor-upload.js"></script>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/layer-v3.1.1/layer/layer.js"></script>
+<h2>下架商品</h2>
+<table>
+    <tr>
+        <td>商品图片</td>
+        <td><input id="txtPhoto" type="text" /></td>
+    </tr>
+    <tr>
+        <td>商品名称</td>
+        <td><input id="txtName" type="text" /></td>
+    </tr>
+    <tr>
+        <td>商品简介</td>
+        <td><textarea id="txtJianjie" rows="3" cols="40"></textarea></td>
+    </tr>
+    <tr>
+        <td>商品数量</td>
+        <td><label id="LbNum"></label></td>
+    </tr>
+    <tr>
+        <td>商品价格</td>
+        <td><input id="txtPrice" type="text" /></td>
+    </tr>
+    <tr>
+        <td>商品分类</td>
+        <td>
+            <select id="SelFenLei">
+                <option></option>
 
-<!DOCTYPE html>
-<link href="~/Content/bootstrap.css" rel="stylesheet" />
-<script src="~/Scripts/jquery-3.3.1.min.js"></script>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>添加货物</title>
-</head>
-<body>
-    <div>
-        <table class="table table-primary">
-            <tr>
-                <td>商品图片：</td>
-                <td><input id="txtGoodPhotoPath" type="text" /></td>
-            </tr>
-            <tr>
-                <td>商品名称：</td>
-                <td><input id="txtGoodName" type="text" /></td>
-            </tr>
-            <tr>
-                <td>商品简介：</td>
-                <td><input id="txtGoodInfo" type="text" /></td>
-            </tr>
-            <tr>
-                <td>商品销售量：</td>
-                <td><input id="txtGoodSellSum" type="text" /></td>
-            </tr><tr>
-                <td>商品数量：</td>
-                <td><input id="txtGoodSum" type="text" /></td>
-            </tr><tr>
-                <td>商品价格：</td>
-                <td><input id="txtGoodPrice" type="text" /></td>
-            </tr><tr>
-                <td>商品类型：</td>
-                <td><input id="txtGTID" type="text" /></td>
-            </tr><tr>
-                <td>商品状态：</td>
-                <td>
-                    <input id="rad1" class="rad" type="radio" name="rad" value="true" checked="checked" />上架
-                    <input id="rad2" class="rad" type="radio" name="rad" value="false" />下架
-                </td>
-            </tr><tr>
-                <td>添加时间：</td>
-                <td><input id="txtGoodCreateTime" type="text" /></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input id="Button1" type="button" value="保存" class="btn btn-default" onclick="save()" />　　<input id="Button1" type="button" value="返回" class="btn btn-default" /></td>
-            </tr>
-        </table>
-    </div>
-</body>
-</html>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>商品状态</td>
+        <td><label id="LbState"></label></td>
+    </tr>
+    <tr>
+        <td><input id="btnAdd" type="button" value="下架" onclick="down()" /></td>
+    </tr>
+</table>
 <script>
-    var txtGoodPhotoPath = $("txtGoodPhotoPath").val();
-    var txtGoodName = $("txtGoodName").val();
-    var txtGoodInfo = $("txtGoodInfo").val();
-    var txtGoodSellSum = $("txtGoodSellSum").val();
-    var txtGoodSum = $("txtGoodSum").val();
-    var txtGoodPrice = $("txtGoodPrice").val();
-    var txtGTID = $("txtGTID").val();
-    var txtGoodState = $(".rad:checked").val();
-    var txtGoodCreateTime = $("txtGoodCreateTime").val();
-    function save() {
+    $(function () {
         $.ajax({
-            url: "",
-            type:"post",
-            datatype: "text",
-            data: {GoodPhotoPath:txtGoodPhotoPath,GoodName:txtGoodName,GoodInfo: txtGoodInfo,GoodSellSum=txtGoodSellSum,GoodSum=txtGoodSum, GoodPrice=txtGoodPrice,GTID=txtGTID,GoodState=txtGoodState, GoodCreateTime=txtGoodCreateTime},
-            success: function data() {
-                if (data>0) {
-                    alert("添加成功");
-                } else {
-                    alert("添加失败");
-                }
+            url: '',
+            type: 'post',
+            data: {},
+            dataType: 'json',
+            success: function (data) {
+                $("#SelFenLei").append("<option value='" + data[i].Id + "'>" + data[i].GoodTypeName + "</option>");
             }
         })
+    })
+    $(function () {
+        $("txtPhoto").upload("/Scripts/ueditor/net/");
+    })
+    function down(id) {
+        layer.confirm('是否将此商品下架？', {
+            btn: ['确定', '取消']
+        }, function () {
+            $.ajax({
+                url: "" + id,
+                async: false,
+                type: "post",
+                success: function () {
+                    layer.close(layer.index);
+                }
+            });
+        }, function () {
+
+            });
+        Backs();
+    }
+    function Backs() {
+        setTimeout(function () {
+            $.ajax({
+                async: false,
+                url: '',
+                success: function (data) {
+                    $("#min").html(data);
+                }
+            })
+        }, 500)
     }
 </script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<input class="ke-input-text" type="text" id="txtPhoto" readonly="readonly" />
+    <input type="button" id="uploadButton" value="Upload" />
+    <script type="text/javascript">
+        $(function () {
+            $('.inp_fileToUpload').change(function () {
+                var formdata = new FormData();
+                var v_this = $(this);
+                var fileObj = this.get(0).files;
+                url = "/upload/upload_json.ashx";
+                //var fileObj=document.getElementById("fileToUpload").files;   formdata.append("imgFile", fileObj[0]);
+                jQuery.ajax({
+                    url: url,
+                    type: 'post',
+                    data: formdata,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.error == 0) {
+                            v_this.parent().children(".img_upload").attr("src", data.url);
+                            //$("#img").attr("src",data.url);
+                        }
+                    }
+                });
+                return false;
+            });
+        });
+    </script>*@
