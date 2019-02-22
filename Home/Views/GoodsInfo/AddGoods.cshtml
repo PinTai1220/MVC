@@ -43,7 +43,7 @@
         <td><label id="LbState"></label></td>
     </tr>
     <tr>
-        <td><input id="btnAdd" type="button" value="下架" onclick="down()" /></td>
+        <td><input id="btnAdd" type="button" value="添加" onclick="Add()" /></td>
     </tr>
 </table>
 <script>
@@ -62,21 +62,7 @@
         $("txtPhoto").upload("/Scripts/ueditor/net/");
     })
     function down(id) {
-        layer.confirm('是否将此商品下架？', {
-            btn: ['确定', '取消']
-        }, function () {
-            $.ajax({
-                url: "" + id,
-                async: false,
-                type: "post",
-                success: function () {
-                    layer.close(layer.index);
-                }
-            });
-        }, function () {
-
-            });
-        Backs();
+        
     }
     function Backs() {
         setTimeout(function () {

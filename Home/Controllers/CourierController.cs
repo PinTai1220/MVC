@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Home.Models;
 using Home.Helpers;
 using Newtonsoft.Json;
+using Home.Filter;
 
 namespace Home.Controllers
 {
@@ -16,6 +17,7 @@ namespace Home.Controllers
         /// </summary>
         /// <returns></returns>
         // GET: Courier
+        [LoginAuthorization]
         public ActionResult Index()
         {
             string json = HttpClientHelper.SendRequest("api/Courier/GetSome/", "Get");

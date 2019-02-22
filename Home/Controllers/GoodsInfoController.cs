@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Newtonsoft.Json;
 using Home.Helpers;
 using Home.Models;
+using Home.Filter;
 
 namespace Home.Controllers
 {
@@ -16,6 +17,7 @@ namespace Home.Controllers
         /// </summary>
         /// <returns></returns>
         // GET: GoodsInfo
+        [LoginAuthorization]
         public ActionResult GoodsIndex()
         {
             string json = HttpClientHelper.SendRequest("api/GoodsInfo/GetSum/?str=&IndexPage=1&IndexSize=8", "Get");
@@ -23,6 +25,7 @@ namespace Home.Controllers
             ViewBag.att = attday;
             return View();
         }
+        [LoginAuthorization]
         public ActionResult AddGoods()
         {
             return View();

@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using Home.Filter;
 
 namespace Home.Controllers
 {
@@ -12,6 +13,7 @@ namespace Home.Controllers
         /// </summary>
         /// <returns></returns>
         // GET: GoodTypeInfo
+        [LoginAuthorization]
         public ActionResult Index()
         {
             string json = HttpClientHelper.SendRequest("api/", "Get");
