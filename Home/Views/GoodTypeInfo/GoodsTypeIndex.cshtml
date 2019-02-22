@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Home.Models.GoodType>
+@{
+    ViewBag.Title = "商品分类";
+    Layout = "~/Views/Shared/ParentView.cshtml";
+    List<object> sourse = ViewBag.att;
+}
+
+<h2>商品分类</h2>
+<table>
+    @foreach (dynamic item in sourse)
+    {
+        <tr>
+            <td><a href="#">@item.GoodTypeName</a></td>
+        </tr>
+    }
+
+</table>
+

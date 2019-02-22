@@ -1,0 +1,52 @@
+﻿@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台登陆</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="login">
+            <h1 class="login-heading">
+                <strong>Welcome.</strong> Please login.
+            </h1>
+            <div>
+                <input type="text" id="user" placeholder="用户名" required="required" class="input-txt" />
+                <input type="password" id="password" placeholder="密码" required="required" class="input-txt" />
+                <div class="login-footer">
+                    <a href="#" class="lnk">
+                        <span class="icon icon--min">ಠ╭╮ಠ</span>
+                        我忘记了什么?
+                    </a>
+                    <button type="button" id="btnLogin" class="btn btn--right" onclick="Login()" >登录  </button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/index.js"></script>
+
+
+</body>
+</html>
+<script>
+    function Login() {
+        var Anum = $("#user").val();
+        var Apassword = $("#password").val();
+        if (Anum == "" || Apassword == "") {
+            alert("信息不完整!")
+            return;
+        }
+        else {
+            location.href = '/Administrator/Login?txtname=' + Anum + '&txtpwd=' + Apassword;
+        }
+    }
+</script>

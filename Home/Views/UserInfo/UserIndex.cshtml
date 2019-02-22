@@ -1,20 +1,20 @@
 ﻿@model IEnumerable<Home.Models.UserInfo>
 @{
-    ViewBag.Title = "UserIndex";
+    ViewBag.Title = "用户信息管理";
     Layout = "~/Views/Shared/ParentView.cshtml";
     List<object> sourse = ViewBag.att;
 }
 
-<h2>UserIndex</h2>
+<h2>用户信息管理</h2>
 <table>
     <thead>
         <tr>
-            <th>头像</th>
             <th>用户名</th>
             <th>昵称</th>
             <th>手机号</th>
             <th>邮箱</th>
             <th>性别</th>
+            <th>头像</th>
             <th>创建时间</th>
         </tr>
     </thead>
@@ -22,8 +22,8 @@
     {
         <tr>
             <td><img src="@item.PhotoPath" style="width:80px;height:80px;border-radius:50%" alt="Alternate Text" /></td>
-            <td>@item.UserName</td>
             <td>@item.UserAccount</td>
+            <td>@item.UserName</td>
             <td>@item.PhoneNumber</td>
             <td>@item.Email</td>
             <td>@item.Sex</td>

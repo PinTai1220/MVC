@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using Home.Helpers;
 using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace Home.Controllers
 {
@@ -16,6 +14,9 @@ namespace Home.Controllers
         // GET: GoodTypeInfo
         public ActionResult Index()
         {
+            string json = HttpClientHelper.SendRequest("api/", "Get");
+            List<object> attday = JsonConvert.DeserializeObject<List<object>>(json);
+            ViewBag.att = attday;
             return View();
         }
     }
