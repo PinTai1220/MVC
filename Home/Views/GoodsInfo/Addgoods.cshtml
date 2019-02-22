@@ -1,0 +1,85 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>添加货物</title>
+</head>
+<body>
+    <div>
+        <table class="table table-primary">
+            <tr>
+                <td>商品图片：</td>
+                <td><input id="txtGoodPhotoPath" type="text" /></td>
+            </tr>
+            <tr>
+                <td>商品名称：</td>
+                <td><input id="txtGoodName" type="text" /></td>
+            </tr>
+            <tr>
+                <td>商品简介：</td>
+                <td><input id="txtGoodInfo" type="text" /></td>
+            </tr>
+            <tr>
+                <td>商品销售量：</td>
+                <td><input id="txtGoodSellSum" type="text" /></td>
+            </tr><tr>
+                <td>商品数量：</td>
+                <td><input id="txtGoodSum" type="text" /></td>
+            </tr><tr>
+                <td>商品价格：</td>
+                <td><input id="txtGoodPrice" type="text" /></td>
+            </tr><tr>
+                <td>商品类型：</td>
+                <td><input id="txtGTID" type="text" /></td>
+            </tr><tr>
+                <td>商品状态：</td>
+                <td>
+                    <input id="rad1" class="rad" type="radio" name="rad" value="true" checked="checked" />上架
+                    <input id="rad2" class="rad" type="radio" name="rad" value="false" />下架
+                </td>
+            </tr><tr>
+                <td>添加时间：</td>
+                <td><input id="txtGoodCreateTime" type="text" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input id="Button1" type="button" value="保存" class="btn btn-default" onclick="save()" />　　<input id="Button1" type="button" value="返回" class="btn btn-default" /></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+<script>
+    var txtGoodPhotoPath = $("txtGoodPhotoPath").val();
+    var txtGoodName = $("txtGoodName").val();
+    var txtGoodInfo = $("txtGoodInfo").val();
+    var txtGoodSellSum = $("txtGoodSellSum").val();
+    var txtGoodSum = $("txtGoodSum").val();
+    var txtGoodPrice = $("txtGoodPrice").val();
+    var txtGTID = $("txtGTID").val();
+    var txtGoodState = $(".rad:checked").val();
+    var txtGoodCreateTime = $("txtGoodCreateTime").val();
+    function save() {
+        $.ajax({
+            url: "",
+            type:"post",
+            datatype: "text",
+            data: {GoodPhotoPath:txtGoodPhotoPath,GoodName:txtGoodName,GoodInfo: txtGoodInfo,GoodSellSum=txtGoodSellSum,GoodSum=txtGoodSum, GoodPrice=txtGoodPrice,GTID=txtGTID,GoodState=txtGoodState, GoodCreateTime=txtGoodCreateTime},
+            success: function data() {
+                if (data>0) {
+                    alert("添加成功");
+                } else {
+                    alert("添加失败");
+                }
+            }
+        })
+    }
+</script>
+

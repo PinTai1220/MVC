@@ -18,5 +18,19 @@ namespace Home.Controllers
         {
             return View();
         }
+        public ActionResult Addgoods()
+        {
+            return View();
+        }
+        public ActionResult Updgoods(int id)
+        {
+            ViewBag.Id = id;
+            return View();
+        }
+        public ActionResult Showgoods()
+        {
+            return View();
+        }
+
     }
 }

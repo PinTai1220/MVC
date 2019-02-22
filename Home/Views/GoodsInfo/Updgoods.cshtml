@@ -1,0 +1,108 @@
+﻿
+@{
+    /**/
+
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>修改货物</title>
+</head>
+<body>
+    <div>
+        <input id="hidId" type="hidden" name="hidId" value="@ViewBag.Id" />
+        <table class="table table-hover">
+            <tr>
+                <td>商品图片：</td>
+                <td><input id="txtGoodPhotoPath" type="file" /></td>
+            </tr>
+            <tr>
+                <td>商品名称：</td>
+                <td><input id="txtGoodName" type="text" /></td>
+            </tr>
+            <tr>
+                <td>商品简介：</td>
+                <td><input id="txtGoodInfo" type="text" /></td>
+            </tr>
+            <tr>
+                <td>商品销售量：</td>
+                <td><input id="txtGoodSellSum" type="text" /></td>
+            </tr>
+            <tr>
+                <td>商品数量：</td>
+                <td><input id="txtGoodSum" type="text" /></td>
+            </tr>
+            <tr>
+                <td>商品价格：</td>
+                <td><input id="txtGoodPrice" type="text" /></td>
+            </tr>
+            <tr>
+                <td>商品类型：</td>
+                <td><input id="txtGTID" type="text" /></td>
+            </tr>
+            <tr>
+                <td>商品状态：</td>
+                <td><input id="txtGoodState" type="text" /></td>
+            </tr>
+            <tr>
+                <td>添加时间：</td>
+                <td><input id="txtGoodCreateTime" type="text" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input id="Button1" type="button" value="保存" class="btn btn-default" onclick="save()" />　　<input id="Button1" type="button" value="返回" class="btn btn-default" /></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+<script>
+    $.ajax({
+        url: '' + Id,
+        type: 'get',
+        dataType: 'json',
+        success: function (data) {
+            if (data != null) {
+                $("#txtGoodPhotoPath").val(data.txtGoodPhotoPath);
+                $("#txtGoodName").val(data.txtGoodName);
+                $("#txtGoodInfo").val(data.txtGoodInfo);
+                $("#txtGoodSellSum").val(data.txtGoodSellSum);
+                $("#txtGoodSum").val(data.txtGoodSum);
+                $("#txtGoodPrice").val(data.txtGoodPrice);
+                $("#txtGTID").val(data.txtGTID);
+                $(".rad[value='" + (data.txtGoodState == true ? '上架' : '下架') + "']").prop("checked", true);
+                $("#txtGoodCreateTime").val(data.txtGoodCreateTime);
+            }
+        }
+    });
+    var txtGoodPhotoPath = $("txtGoodPhotoPath").val();
+    var txtGoodName = $("txtGoodName").val();
+    var txtGoodInfo = $("txtGoodInfo").val();
+    var txtGoodSellSum = $("txtGoodSellSum").val();
+    var txtGoodSum = $("txtGoodSum").val();
+    var txtGoodPrice = $("txtGoodPrice").val();
+    var txtGTID = $("txtGTID").val();
+    var txtGoodState = $(".rad:checked").val();
+    var txtGoodCreateTime = $("txtGoodCreateTime").val();
+    function save() {
+        $.ajax({
+            url: "",
+            type: "put",
+            datatype: "text",
+            data: { GoodPhotoPath: txtGoodPhotoPath, GoodName: txtGoodName, GoodInfo: txtGoodInfo, GoodSellSum=txtGoodSellSum, GoodSum=txtGoodSum, GoodPrice=txtGoodPrice, GTID=txtGTID, GoodState=txtGoodState, GoodCreateTime=txtGoodCreateTime },
+            success: function data() {
+                if (data > 0) {
+                    alert("保存成功");
+                } else {
+                    alert("保存失败");
+                }
+            }
+        })
+    }
+</script>
+
