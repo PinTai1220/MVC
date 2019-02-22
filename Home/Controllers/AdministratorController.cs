@@ -27,7 +27,7 @@ namespace Home.Controllers
             int n = Convert.ToInt32(JsonConvert.DeserializeObject<Administrator>(result));
             if (n > 0)
             {
-                Response.Write("<script>alert('登陆成功!')</script>");
+                Response.Write("<script>alert('登陆成功!');location.href='/Administrator/Main'</script>");
             }
 
         }

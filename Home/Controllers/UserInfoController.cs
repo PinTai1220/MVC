@@ -20,7 +20,7 @@ namespace Home.Controllers
         // GET: UserInfo
         public ActionResult Index()
         {
-            string json = HttpClientHelper.SendRequest("api/", "Get");
+            string json = HttpClientHelper.SendRequest("api/GetAll/?str=&PageIndex=1&PageSize=4", "Get");
             List<object> attday = JsonConvert.DeserializeObject<List<object>>(json);
             ViewBag.att = attday;
             return View();

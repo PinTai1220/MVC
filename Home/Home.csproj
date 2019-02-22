@@ -707,11 +707,11 @@
     <Content Include="Scripts\layer-v3.1.1\文档\layer文档.url" />
     <Content Include="Scripts\layer-v3.1.1\文档\layui社区.url" />
     <Content Include="Scripts\layer-v3.1.1\文档\获得layim.url" />
+    <Content Include="Views\Administrator\Main.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\AddressInfo\" />
-    <Folder Include="Views\Administrator\" />
     <Folder Include="Views\BuyCarInfo\" />
     <Folder Include="Views\OrderInfo\" />
     <Folder Include="Views\ShoppingCart\" />
