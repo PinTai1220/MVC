@@ -29,7 +29,10 @@ namespace Home.Controllers
             {
                 Response.Write("<script>alert('登陆成功!');location.href='/Administrator/Main'</script>");
             }
-
+        }
+        public ActionResult Main()
+        {
+            return View();
         }
     }
 }
