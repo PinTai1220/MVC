@@ -18,7 +18,7 @@ namespace Home.Controllers
         /// </summary>
         /// <returns></returns>
         // GET: UserInfo
-        public ActionResult Index()
+        public ActionResult UserIndex()
         {
             string json = HttpClientHelper.SendRequest("api/", "Get");
             List<object> attday = JsonConvert.DeserializeObject<List<object>>(json);
