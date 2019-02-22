@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link href="~/Content/style.css" rel="stylesheet" />
-
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
 </head>
 <body>
     <div class="container">
@@ -25,7 +25,7 @@
                         <span class="icon icon--min">ಠ╭╮ಠ</span>
                         我忘记了什么?
                     </a>
-                    <button type="button" class="btn btn--right" onclick="sava()">登录  </button>
+                    <button type="button" id="btnLogin" class="btn btn--right" onclick="Login()" >登录  </button>
 
                 </div>
             </div>
@@ -38,14 +38,15 @@
 </body>
 </html>
 <script>
-    function sava() {
+    function Login() {
         var Anum = $("#user").val();
         var Apassword = $("#password").val();
         if (Anum == "" || Apassword == "") {
             alert("信息不完整!")
             return;
-        } else {
-            location.href = '/Administrator/AdminLogin?txtname=' + Anum + '&txtpwd=' + Apassword;
+        }
+        else {
+            location.href = '/Administrator/Login?txtname=' + Anum + '&txtpwd=' + Apassword;
         }
     }
 </script>

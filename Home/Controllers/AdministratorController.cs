@@ -15,17 +15,16 @@ namespace Home.Controllers
         /// </summary>
         /// <returns></returns>
         // GET: Administrator
+        [HttpGet]
         public ActionResult AdminLogin()
         {
             return View();
         }
         [HttpGet]
-        public void AdminLogin(string txtname, string txtpwd)
+        public void Login(string txtname, string txtpwd)
         {
-            var post = new Administrator { AdministratorAccount = txtname, AdministratorPwd = txtpwd };
-            string result = Helpers.HttpClientHelper.SendRequest("api/Get?jsonStr=" + JsonConvert.SerializeObject(post), "get");
-            int n = Convert.ToInt32(JsonConvert.DeserializeObject<Administrator>(result));
-            if (n > 0)
+            string result = Helpers.HttpClientHelper.SendRequest("api/Administrator/Login?AdministratorAccount=" + txtname+ "&AdministratorPwd="+txtpwd, "get");
+            if (int.Parse(result) > 0)
             {
                 Response.Write("<script>alert('登陆成功!');location.href='/Administrator/Main'</script>");
             }
