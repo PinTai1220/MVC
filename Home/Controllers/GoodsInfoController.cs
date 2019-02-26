@@ -17,7 +17,7 @@ namespace Home.Controllers
         /// </summary>
         /// <returns></returns>
         // GET: GoodsInfo
-        [LoginAuthorization]
+        //[LoginAuthorization]
         public ActionResult GoodsIndex()
         {
             string json = HttpClientHelper.SendRequest("api/GoodsInfo/GetSum/?str=&IndexPage=1&IndexSize=8", "Get");
@@ -25,10 +25,24 @@ namespace Home.Controllers
             ViewBag.att = attday;
             return View();
         }
-        [LoginAuthorization]
+        //[LoginAuthorization]
         public ActionResult AddGoods()
         {
             return View();
         }
+        public ActionResult Addgood()
+        {
+            return View();
+        }
+        public ActionResult Updgoods(int id)
+        {
+            ViewBag.Id = id;
+            return View();
+        }
+        public ActionResult Showgoods()
+        {
+            return View();
+        }
+
     }
 }

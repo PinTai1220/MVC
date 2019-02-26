@@ -19,7 +19,8 @@ namespace Home.Controllers
         /// </summary>
         /// <returns></returns>
         // GET: UserInfo
-       [LoginAuthorization]
+        [HttpGet]
+        [LoginAuthorization]
         public ActionResult UserIndex()
         {
             string json = HttpClientHelper.SendRequest("api/User/GetAll?str=&PageIndex=1&PageSize=4", "Get");

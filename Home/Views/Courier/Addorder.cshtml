@@ -1,0 +1,62 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>填写订单</title>
+</head>
+<body>
+    <div>
+        <table class="table table-hover">
+            <tr>
+                <td>货物信息：</td>
+                <td><input id="txtxx" type="text" /></td>
+            </tr>
+            <tr>
+                <td>收货人姓名：</td>
+                <td><input id="txtxm" type="text" /></td>
+            </tr>
+            <tr>
+                <td>收货人号码：</td>
+                <td><input id="txthm" type="text" /></td>
+            </tr>
+            <tr>
+                <td>收货人详细地址：</td>
+                <td><input id="txtdz" type="text" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input id="Button1" type="button" value="保存" class="btn btn-default" onclick="save()" />　　<input id="Button1" type="button" value="返回" class="btn btn-default" /></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+<script>
+    var xx = $("txtxx").val();
+    var xm = $("txtxm").val();
+    var hm = $("txthm").val();
+    var dz = $("txtdz").val();
+    function save() {
+        $.ajax({
+            url: "http://localhost:54217/api/CourierController/Add",
+            type:"post",
+            datatype: "text",
+            data: { GoodName: xx, TGName: xm, TGPhone: hm, TGAddress=dz},
+            success: function data() {
+                if (data>0) {
+                    alert("添加成功");
+                } else {
+                    alert("添加失败");
+                }
+            }
+        })
+    }
+</script>
+

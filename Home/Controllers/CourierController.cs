@@ -25,5 +25,9 @@ namespace Home.Controllers
             ViewBag.att = attday;
             return View();
         }
+        public ActionResult Addorder()
+        {
+            return View();
+        }
     }
 }
