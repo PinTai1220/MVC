@@ -14,7 +14,7 @@ namespace Home.Filter
             //如果未登录，则转到Login控制器的Index方法。
             if (System.Web.HttpContext.Current.Session["Login"] == null)
             {
-                filterContext.Result = new RedirectResult("/Account/Index");
+                filterContext.Result = new RedirectResult("/Administrator/AdminLogin");
             }
         }
 
