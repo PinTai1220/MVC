@@ -27,7 +27,7 @@ namespace Home.Controllers
         {
             return View();
         }
-        public ActionResult Addgoods()
+        public ActionResult Addgood()
         {
             return View();
         }

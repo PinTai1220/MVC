@@ -45,7 +45,7 @@
     var dz = $("txtdz").val();
     function save() {
         $.ajax({
-            url: "",
+            url: "http://localhost:54217/api/CourierController/Add",
             type:"post",
             datatype: "text",
             data: { GoodName: xx, TGName: xm, TGPhone: hm, TGAddress=dz},
