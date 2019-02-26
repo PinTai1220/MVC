@@ -28,6 +28,9 @@ namespace Home.Controllers
             string result = Helpers.HttpClientHelper.SendRequest("api/Administrator/Login?AdministratorAccount=" + txtname+ "&AdministratorPwd="+txtpwd, "get");
             if (int.Parse(result) > 0)
             {
+                if (Session["Login"] != null)
+                { Session.Remove("Login"); }
+                Session["Login"] = result;
                 Response.Write("<script>location.href='/Administrator/Main'</script>");
             }
         }

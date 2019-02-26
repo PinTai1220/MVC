@@ -19,10 +19,10 @@ namespace Home.Controllers
         /// </summary>
         /// <returns></returns>
         // GET: UserInfo
-        [LoginAuthorization]
+       [LoginAuthorization]
         public ActionResult UserIndex()
         {
-            string json = HttpClientHelper.SendRequest("api/User/GetAll/?str=&PageIndex=1&PageSize=4", "Get");
+            string json = HttpClientHelper.SendRequest("api/User/GetAll?str=&PageIndex=1&PageSize=4", "Get");
             List<object> attday = JsonConvert.DeserializeObject<List<object>>(json);
             ViewBag.att = attday;
             return View();

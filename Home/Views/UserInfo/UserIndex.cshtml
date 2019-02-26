@@ -1,33 +1,44 @@
-﻿@model IEnumerable<Home.Models.UserInfo>
+﻿
 @{
     ViewBag.Title = "用户信息管理";
     Layout = "~/Views/Shared/ParentView.cshtml";
     List<object> sourse = ViewBag.att;
 }
-
+<script src="~/JS/bootstrap.js"></script>
 <h2>用户信息管理</h2>
-<table>
-    <thead>
-        <tr>
-            <th>用户名</th>
-            <th>昵称</th>
-            <th>手机号</th>
-            <th>邮箱</th>
-            <th>性别</th>
-            <th>头像</th>
-            <th>创建时间</th>
-        </tr>
-    </thead>
-    @foreach (dynamic item in Model)
-    {
-        <tr>
-            <td><img src="@item.PhotoPath" style="width:80px;height:80px;border-radius:50%" alt="Alternate Text" /></td>
-            <td>@item.UserAccount</td>
-            <td>@item.UserName</td>
-            <td>@item.PhoneNumber</td>
-            <td>@item.Email</td>
-            <td>@item.Sex</td>
-            <td>@item.UserCraeteTime</td>
-        </tr>
-    }
-</table>
+<div style="margin-top:70px;margin-left:80px">
+
+
+    <table class=" table table-bordered">
+        <thead>
+            <tr>
+                <th>账号</th>
+                <th>头像</th>
+                <th>昵称</th>
+                <th>手机号</th>
+                <th>邮箱</th>
+                <th>收货人</th>
+                <th>联系方式</th>
+                <th>收货地址</th>
+            </tr>
+        </thead>
+
+        @if (sourse != null)
+        {
+            foreach (dynamic item in sourse)
+            {
+                <tr>
+                    <td>@item.UserAccount</td>
+                    <td><img src="@item.PhotoPath" style="width:80px;height:80px;border-radius:50%" alt="Alternate Text" /></td>
+                    <td>@item.UserName</td>
+                    <td>@item.PhoneNumber</td>
+                    <td>@item.Email</td>
+                    <td>@item.TGName</td>
+                    <td>@item.TGAddress</td>
+                    <td>@item.TGPhone</td>
+                </tr>
+            }
+        }
+
+    </table>
+</div>
