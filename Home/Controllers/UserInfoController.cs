@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Newtonsoft.Json;
 using Home.Helpers;
 using Home.Models;
+using Home.Filter;
 
 namespace Home.Controllers
 {
@@ -18,9 +19,10 @@ namespace Home.Controllers
         /// </summary>
         /// <returns></returns>
         // GET: UserInfo
+        [LoginAuthorization]
         public ActionResult UserIndex()
         {
-            string json = HttpClientHelper.SendRequest("api/GetAll/?str=&PageIndex=1&PageSize=4", "Get");
+            string json = HttpClientHelper.SendRequest("api/User/GetAll/?str=&PageIndex=1&PageSize=4", "Get");
             List<object> attday = JsonConvert.DeserializeObject<List<object>>(json);
             ViewBag.att = attday;
             return View();
