@@ -1,97 +1,87 @@
-﻿
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-    <meta name="viewport" content="width=device-width" />
-    <title>Showgoods</title>
-</head>
-<body>
-    <div>
+﻿@model IEnumerable<Home.Models.GoodsInfo>
+    @{
+        ViewBag.Title = "Showgoods";
+        Layout = "~/Views/Shared/ParentView.cshtml";
+    }
+    <script src="~/JS/bootstrap.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <div style="margin-top:70px;margin-left:300px">
         <input id="ButAdd" type="button" value="添加" class="btn btn-default" onclick="add()" />
         <input id="txtsel" type="text" />
         <input id="ButSel" type="button" value="搜索" class="btn btn-default" onclilc="sel()" />
-        <table class="table table-hover">
+
+        <table class=" table table-bordered">
             <thead>
                 <tr>
-                    <td>商品id</td>
-                    <td>商品图片</td>
-                    <td>商品名称</td>
-                    <td>商品简介</td>
-                    <td>商品数量</td>
-                    <td>商品销售量</td>
-                    <td>商品价格</td>
-                    <td>商品类型</td>
-                    <td>商品状态</td>
-                    <td>添加时间</td>
-                    <td>操作</td>
+                    <th>商品id</th>
+                    <th>商品图片</th>
+                    <th>商品名称</th>
+                    <th>商品简介</th>
+                    <th>商品数量</th>
+                    <th>商品销售量</th>
+                    <th>商品价格</th>
+                    <th>商品类型</th>
+                    <th>商品状态</th>
+                    <th>添加时间</th>
+                    <th>操作</th>
                 </tr>
             </thead>
             <tbody id="tb">
                 @*<tr><td>" + data[i].GoodId + "</td><td>" + data[i].GoodPhotoPath + "</td><td>" + data[i].GoodName + "</td><td>" + data[i].GoodInfo + "</td><td>" + data[i].GoodSellSum + "</td><td>" + data[i].GoodSum + "</td><td>" + data[i].GoodPrice + "</td><td>" + data[i].GTID + "</td><td>" + (data[i].GoodState == true ? "上架" : "下架") + "</td><td>" + data[i].GoodCreateTime + "</td><td><input id='btnEdit' type='button' class='btn btn-default' value='编辑' onclick='edit(" + data[i].GoodId + ")' /><input id='btnEdit' type='button' class='btn btn-default' value='删除' onclick='del(" + data[i].GoodId + ")' /></tr>*@
             </tbody>
-            <tr>
-                
-            </tr>
         </table>
     </div>
-</body>
-</html>
-<script>
-    $(function () {
-        $.ajax({
-            url: 'http://localhost:54217/api/GoodsInfo/SelectPart?str=&Pageindex=1&Pagesize=5&state=1',
-            type: 'get',
-            dataType: 'text',
-            success: function (data) {
-                var newdata = JSON.parse(JSON.parse(data));
-                for (var i = 0; i < newdata.length; i++) {
-                    $("#tb").append("<tr><td>" + newdata[i].GoodId + "</td><td>" + newdata[i].GoodPhotoPath + "</td><td>" + newdata[i].GoodName + "</td><td>" + newdata[i].GoodInfo + "</td><td>" + newdata[i].GoodSellSum + "</td><td>" + newdata[i].GoodSum + "</td><td>" + newdata[i].GoodPrice + "</td><td>" + newdata[i].GoodTypeName + "</td><td>" + (newdata[i].GoodState == 1 ? "上架" : "下架") + "</td><td>" + newdata[i].GoodCreateTime + "</td><td><input id='btnEdit' type='button' class='btn btn-default' value='编辑' onclick='edit(" + data[i].GoodId + ")' /><input id='btnDel' type='button' class='btn btn-default' value='删除' onclick='del(" + data[i].GoodId + ")' /></tr>");
-                }
-            }
-        });
-    });
-    function add() {
-        location.href = "/GoodsInfo/Addgoods";
-    }
-    function del(id) {
-        if (confirm("确认删除么？")) {
+    <script>
+        $(function () {
             $.ajax({
-                url: 'http://localhost:54217/api/GoodsInfo/GoodStateUpt?id=' + id+'&state=0',
-                type: 'post',
+                url: 'http://localhost:54217/api/GoodsInfo/SelectPart?str=&Pageindex=1&Pagesize=5&state=1',
+                type: 'get',
                 dataType: 'text',
                 success: function (data) {
-                    if (data > 0) {
-                        alert("删除成功");
-                        location.reload();
-                    }
-                    else {
-                        alert("删除失败");
+                    var newdata = JSON.parse(JSON.parse(data));
+                    for (var i = 0; i < newdata.length; i++) {
+                        $("#tb").append("<tr><td>" + newdata[i].GoodId + "</td><td>" + newdata[i].GoodPhotoPath + "</td><td>" + newdata[i].GoodName + "</td><td>" + newdata[i].GoodInfo + "</td><td>" + newdata[i].GoodSellSum + "</td><td>" + newdata[i].GoodSum + "</td><td>" + newdata[i].GoodPrice + "</td><td>" + newdata[i].GoodTypeName + "</td><td>" + (newdata[i].GoodState == 1 ? "上架" : "下架") + "</td><td>" + newdata[i].GoodCreateTime + "</td><td><input id='btnEdit' type='button' class='btn btn-default' value='编辑' onclick='edit(" + data[i].GoodId + ")' /><input id='btnDel' type='button' class='btn btn-default' value='删除' onclick='del(" + data[i].GoodId + ")' /></tr>");
                     }
                 }
             });
+        });
+        function add() {
+            location.href = "/GoodsInfo/Addgoods";
         }
-    }
-    function edit(id) {
-        location.href = "/GoodsInfo/Addgoods"+id;
-    }
-    function sel() {
-        var txtsel = $("txtsel").val();
-        $.ajax({
-            url: '',
-            type: 'get',
-            data: { GoodName:txtsel},
-            success: function (data) {
-                for (var i = 0; i < data.length; i++) {
-                    $("#tb").append("<tr><td>" + data[i].GoodId + "</td><td>" + data[i].GoodPhotoPath + "</td><td>" + data[i].GoodName + "</td><td>" + data[i].GoodInfo + "</td><td>" + data[i].GoodSellSum + "</td><td>" + data[i].GoodSum + "</td><td>" + data[i].GoodPrice + "</td><td>" + data[i].GTID + "</td><td>" + (data[i].GoodState == true ? "上架" : "下架") + "</td><td>" + data[i].GoodCreateTime + "</td><td><input id='btnEdit' type='button' class='btn btn - default' value='编辑' onclick='edit(" + data[i].GoodId + ")' /><input id='btnDel' type='button' class='btn btn - default' value='删除' onclick='del(" + data[i].GoodId + ")' /></tr>");
-                }
+        function del(id) {
+            if (confirm("确认删除么？")) {
+                $.ajax({
+                    url: 'http://localhost:54217/api/GoodsInfo/GoodStateUpt?id=' + id + '&state=0',
+                    type: 'post',
+                    dataType: 'text',
+                    success: function (data) {
+                        if (data > 0) {
+                            alert("删除成功");
+                            location.reload();
+                        }
+                        else {
+                            alert("删除失败");
+                        }
+                    }
+                });
             }
-        })
-    }
-</script>
+        }
+        function edit(id) {
+            location.href = "/GoodsInfo/Addgoods" + id;
+        }
+        function sel() {
+            var txtsel = $("txtsel").val();
+            $.ajax({
+                url: '',
+                type: 'get',
+                data: { GoodName: txtsel },
+                success: function (data) {
+                    for (var i = 0; i < data.length; i++) {
+                        $("#tb").append("<tr><td>" + data[i].GoodId + "</td><td>" + data[i].GoodPhotoPath + "</td><td>" + data[i].GoodName + "</td><td>" + data[i].GoodInfo + "</td><td>" + data[i].GoodSellSum + "</td><td>" + data[i].GoodSum + "</td><td>" + data[i].GoodPrice + "</td><td>" + data[i].GTID + "</td><td>" + (data[i].GoodState == true ? "上架" : "下架") + "</td><td>" + data[i].GoodCreateTime + "</td><td><input id='btnEdit' type='button' class='btn btn - default' value='编辑' onclick='edit(" + data[i].GoodId + ")' /><input id='btnDel' type='button' class='btn btn - default' value='删除' onclick='del(" + data[i].GoodId + ")' /></tr>");
+                    }
+                }
+            })
+        }
+    </script>
+
+
