@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        <div class="container">
+            <div class="login">
+                <h1 class="login-heading">
+                    <strong>Welcome.</strong> Please login.
+                </h1>
+                <div>
+                    <input type="text" id="name" placeholder="用户名" required="required" class="input-txt" />
+                    <input type="password" id="pwd" placeholder="密码" required="required" class="input-txt" />
+                    <div class="login-footer">
+
+                        <button type="button" id="btnLogin" class="btn btn--right" onclick="Login()">登录  </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="~/Scripts/index.js"></script>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function Login() {
+        var name = $("#name").val();
+        var pwd = $("#pwd").val();
+        if (name == "" && pwd == "") {
+            alert("请完善您的信息");
+            return;
+        }
+        else {
+            location.href = "/UserInfo/Login?Name=" + name + "&Pwd" + pwd;
+        }
+    }
+
+</script>

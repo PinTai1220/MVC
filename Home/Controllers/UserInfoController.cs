@@ -41,10 +41,16 @@ namespace Home.Controllers
         {
             return View();
         }
-        public ActionResult Login(string Name,string Pwd)
+        public void Login(string Name,string Pwd)
         {
-
-            return View();
+            string result = Helpers.HttpClientHelper.SendRequest("api/UserInfo/Login?UserInfoName=" + Name+ "&UserInfoPwd="+Pwd,"get");
+            if (int.Parse(result) > 0)
+            {
+                if (Session["Login"] != null)
+                { Session.Remove("Login"); }
+                Session["Login"] = result;
+                Response.Write("<script>location.href='/UserInfo/'</script>");
+            }
         }
     }
 }

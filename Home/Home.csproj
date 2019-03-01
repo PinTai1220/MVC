@@ -718,12 +718,12 @@
     <Content Include="Scripts\layer-v3.1.1\文档\layui社区.url" />
     <Content Include="Scripts\layer-v3.1.1\文档\获得layim.url" />
     <Content Include="Views\Administrator\Main.cshtml" />
-    <Content Include="Views\GoodsInfo\Showgoods.cshtml" />
-    <Content Include="Views\GoodsInfo\Updgoods.cshtml" />
     <Content Include="Views\Courier\Addorder.cshtml" />
-    <Content Include="Views\GoodsInfo\Addgood.cshtml" />
     <Content Include="Views\UserInfo\UserResult.cshtml" />
     <Content Include="Views\UserInfo\CeShi.cshtml" />
+    <Content Include="Views\GoodsInfo\Addgood.cshtml" />
+    <Content Include="Views\GoodsInfo\Showgoods.cshtml" />
+    <Content Include="Views\GoodsInfo\Updgoods.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
