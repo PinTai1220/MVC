@@ -149,6 +149,7 @@
     <Compile Include="Controllers\SalesRecordController.cs" />
     <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
+    <Compile Include="Filter\LoginAuthorization.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -184,6 +185,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Imgs\001.jpg" />
+    <Content Include="Imgs\avatar-1.png" />
+    <Content Include="Imgs\家居宝.png" />
     <Content Include="JS\bootstrap.js" />
     <Content Include="JS\bootstrap.min.js" />
     <Content Include="JS\npm.js" />
@@ -709,6 +713,10 @@
     <Content Include="Scripts\layer-v3.1.1\文档\layui社区.url" />
     <Content Include="Scripts\layer-v3.1.1\文档\获得layim.url" />
     <Content Include="Views\Administrator\Main.cshtml" />
+    <Content Include="Views\GoodsInfo\Showgoods.cshtml" />
+    <Content Include="Views\GoodsInfo\Updgoods.cshtml" />
+    <Content Include="Views\Courier\Addorder.cshtml" />
+    <Content Include="Views\GoodsInfo\Addgood.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

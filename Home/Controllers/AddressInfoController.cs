@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
+using Home.Filter;
 
 namespace Home.Controllers
 {
@@ -14,6 +15,7 @@ namespace Home.Controllers
         /// </summary>
         /// <returns></returns>
         // GET: AddressInfo
+        [LoginAuthorization]
         public ActionResult Index()
         {
             return View();

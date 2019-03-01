@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Home.Helpers;
 using Home.Models;
 using Newtonsoft.Json;
+using Home.Filter;
 
 namespace Home.Controllers
 {
@@ -16,6 +17,7 @@ namespace Home.Controllers
         /// </summary>
         /// <returns></returns>
         // GET: SalesRecord
+        [LoginAuthorization]
         public ActionResult ShowSales()
         {
             string json = HttpClientHelper.SendRequest("api/", "Get");

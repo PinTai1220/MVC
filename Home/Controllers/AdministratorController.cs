@@ -15,18 +15,23 @@ namespace Home.Controllers
         /// </summary>
         /// <returns></returns>
         // GET: Administrator
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult AdminLogin()
         {
             return View();
         }
+        [AllowAnonymous]
         [HttpGet]
         public void Login(string txtname, string txtpwd)
         {
             string result = Helpers.HttpClientHelper.SendRequest("api/Administrator/Login?AdministratorAccount=" + txtname+ "&AdministratorPwd="+txtpwd, "get");
             if (int.Parse(result) > 0)
             {
-                Response.Write("<script>alert('登陆成功!');location.href='/Administrator/Main'</script>");
+                if (Session["Login"] != null)
+                { Session.Remove("Login"); }
+                Session["Login"] = result;
+                Response.Write("<script>location.href='/Administrator/Main'</script>");
             }
         }
         public ActionResult Main()
