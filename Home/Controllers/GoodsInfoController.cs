@@ -16,29 +16,18 @@ namespace Home.Controllers
         /// 商品控制器
         /// </summary>
         /// <returns></returns>
-        // GET: GoodsInfo
-        //[LoginAuthorization]
-        public ActionResult GoodsIndex()
-        {
-            string json = HttpClientHelper.SendRequest("api/GoodsInfo/GetSum/?str=&IndexPage=1&IndexSize=8", "Get");
-            List<object> attday = JsonConvert.DeserializeObject<List<object>>(json);
-            ViewBag.att = attday;
-            return View();
-        }
-        //[LoginAuthorization]
-        public ActionResult AddGoods()
-        {
-            return View();
-        }
+        [LoginAuthorization]
         public ActionResult Addgood()
         {
             return View();
         }
+        [LoginAuthorization]
         public ActionResult Updgoods(int id)
         {
             ViewBag.Id = id;
             return View();
         }
+        [LoginAuthorization]
         public ActionResult Showgoods()
         {
             return View();

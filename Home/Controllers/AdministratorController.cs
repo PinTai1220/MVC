@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using Home.Helpers;
 using Newtonsoft.Json;
 using Home.Models;
+using Home.Filter;
+
 namespace Home.Controllers
 {
     public class AdministratorController : Controller
@@ -34,6 +36,7 @@ namespace Home.Controllers
                 Response.Write("<script>location.href='/Administrator/Main'</script>");
             }
         }
+        [LoginAuthorization]
         public ActionResult Main()
         {
             return View();

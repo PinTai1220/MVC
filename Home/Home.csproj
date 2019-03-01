@@ -686,7 +686,6 @@
     <Content Include="Views\UserInfo\UserIndex.cshtml" />
     <Content Include="Views\Courier\Index.cshtml" />
     <Content Include="Views\GoodTypeInfo\GoodsTypeIndex.cshtml" />
-    <Content Include="Views\GoodsInfo\AddGoods.cshtml" />
     <Content Include="Scripts\ueditor\net\.vs\net\v15\.suo" />
     <Content Include="Scripts\ueditor\net\config.json" />
     <Content Include="Scripts\ueditor\net\controller.ashx" />
@@ -707,7 +706,6 @@
     <Content Include="Scripts\layui-v2.4.5\文档与示例\快速上手.url" />
     <Content Include="Scripts\layui-v2.4.5\更新日志.url" />
     <Content Include="Views\Administrator\AdminLogin.cshtml" />
-    <Content Include="Views\GoodsInfo\GoodsIndex.cshtml" />
     <Content Include="Scripts\layer-v3.1.1\文档\jquery下载.url" />
     <Content Include="Scripts\layer-v3.1.1\文档\layer官网.url" />
     <Content Include="Scripts\layer-v3.1.1\文档\layer文档.url" />
