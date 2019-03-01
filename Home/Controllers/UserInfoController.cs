@@ -36,5 +36,15 @@ namespace Home.Controllers
         {
             return View();
         }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+        public ActionResult Login(string Name,string Pwd)
+        {
+
+            return View();
+        }
     }
 }
