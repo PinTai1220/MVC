@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserResult</title>
+</head>
+<body>
+    <div>
+        <input type="hidden" id="hiddenTime" name="name" value="@ViewBag.Time" />
+        <table>
+            <tr>
+                <td>用户名</td>
+                <td><input id="UserAccount" type="text" placeholder="请输入用户名" /></td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td><input id="UserPwd" type="text" placeholder="请输入密码" /></td>
+            </tr>
+            <tr>
+                <td><input id="Button1" type="button" value="注册" onclick="Region()" /></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script>
+    function Region() {
+        var UserAccount = $("#UserAccount").val();
+        var UserPwd = $("#UserPwd").val();
+
+        $.ajax({
+            url: "http://localhost:54217/api/User/Add/" ,
+            type: "post",
+            data: { UserAccount: UserAccount, UserPwd: UserPwd },
+            dataType: "json",
+            success: function (data) {
+                if (data > 0) {
+                    alert("O了");
+                } else if (data == -1) {
+                    alert("账号已被注册过,请重新注册");
+                } else {
+                    alert("有误!");
+                }
+            }
+        })
+    }
+</script>
