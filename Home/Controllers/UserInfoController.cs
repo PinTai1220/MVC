@@ -28,5 +28,23 @@ namespace Home.Controllers
             ViewBag.att = attday;
             return View();
         }
+        public ActionResult UserResult()
+        {
+            return View();
+        }
+        public ActionResult CeShi()
+        {
+            return View();
+        }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+        public ActionResult Login(string Name,string Pwd)
+        {
+
+            return View();
+        }
     }
 }
