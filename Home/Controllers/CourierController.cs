@@ -25,6 +25,7 @@ namespace Home.Controllers
             ViewBag.att = attday;
             return View();
         }
+        [LoginAuthorization]
         public ActionResult Addorder()
         {
             return View();
