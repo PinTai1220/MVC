@@ -726,6 +726,7 @@
     <Content Include="Views\GoodsInfo\Addgood.cshtml" />
     <Content Include="Views\UserInfo\UserResult.cshtml" />
     <Content Include="Views\UserInfo\CeShi.cshtml" />
+    <Content Include="Views\UserInfo\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
