@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!-- import CSS -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<!--axios发送ajax请求的插件-->
+<script src="~/JS/axios.js"></script>
+
+<div id="app" style="text-align:center">
+    <div class="app-init pay-page scroll-box" style="margin-top:150px">
+        <header-back title="关于"></header-back>
+
+        <div class="padding-box">
+            <p>商城 功能, 布局 由本人实现，图片来源界面布局排版均防自 <span class="color">小米商城 m.mi.com</span></p>
+            <br>
+            <p>联系我</p>
+            <p>e-mail: millent@126.com</p>
+            <p>github: github.com/jon-millent</p>
+            <p>website: http://verydog.cn</p>
+
+            <br>
+            <p>Update on 2019/01/15</p>
+
+        </div>
+
+    </div>
+</div>
+
+<script type="text/ecmascript-6">
+    import headerBack from '../../components/header-back'
+
+    export default{
+      name: 'pay',
+      components: {
+        headerBack
+      }
+    }
+</script>
+
+<style type="text/sass" lang="sass">
+    .pay-page
+    background-color: #fff
+    .padding-box
+    padding: 0.4rem
+    color: #333
+    .color
+    color: orange
+    ul
+    padding-left: 0.8rem
+    li
+    list-style: disc
+</style>

@@ -36,5 +36,9 @@ namespace Home.Controllers
         {
             return View();
         }
+        public ActionResult CeShi1()
+        {
+            return View();
+        }
     }
 }
