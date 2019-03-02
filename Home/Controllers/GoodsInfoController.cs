@@ -32,6 +32,10 @@ namespace Home.Controllers
         {
             return View();
         }
-
+        [LoginAuthorization]
+        public ActionResult CShowgoods()
+        {
+            return View();
+        }
     }
 }
