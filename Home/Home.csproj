@@ -724,6 +724,7 @@
     <Content Include="Views\GoodsInfo\Addgood.cshtml" />
     <Content Include="Views\GoodsInfo\Showgoods.cshtml" />
     <Content Include="Views\GoodsInfo\Updgoods.cshtml" />
+    <Content Include="Views\GoodsInfo\CShowgoods.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
