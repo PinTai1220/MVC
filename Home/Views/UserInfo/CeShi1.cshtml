@@ -1,0 +1,89 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!-- import CSS -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<!--axios发送ajax请求的插件-->
+<script src="~/JS/axios.js"></script>
+
+
+
+    <div class="padding-box" id="app" style="text-align:center;height:800px">
+       
+        <el-form ref="form" :model="form" label-width="150px" style="margin-top:250px;">
+            <h1 style="padding:50px">爱家居商城注册</h1>
+            <el-form-item>
+                <span style="font-size:24px">用户名:&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <el-input v-model="form.name" placeholder="请输入用户名"  style="font-size:28px;width:60%;"clearable></el-input>
+            </el-form-item>
+            <el-form-item>
+                <span style="font-size:24px">密码:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                <el-input v-model="form.region" placeholder="请输入密码" clearable style="font-size:28px;width:60%;"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <span style="font-size:24px">确认密码:</span>
+                <el-input v-model="form.Que" placeholder="请输入确认密码" clearable style="font-size:28px;width:60%;"></el-input>
+            </el-form-item>
+            @*<el-form-item  style="text-align:center;">*@
+            <el-button style="font-size:24px;width:200px;text-align:center;" type="primary" round> 注册</el-button>
+            @*</el-form-item>*@
+        </el-form>
+    </div>
+
+
+
+
+<script type="text/ecmascript-6">
+    import headerBack from '../../components/header-back'
+
+    export default{
+      name: 'pay',
+      components: {
+        headerBack
+      }
+    }
+</script>
+<script type="module">
+    window.onload = function () {
+        var Ctor = new Vue({
+            el: '#app',
+            data: {
+                form: {
+                    name: '',
+                    region: '',
+                    Que: ''
+                }
+            },
+            methods: {
+                onSubmit() {
+                    console.log(JSON.stringify(this.form));
+                    //axios.post('url',this.form)
+                    //.then(fucntion(response){
+                    //提交成功回调
+                    //})
+                    //.catch(function(error){
+                    //提交失败回调
+                    //})
+                }
+            },
+            created: function () {
+                //一般来说这里会发送ajax请求
+                this.form = {};
+
+                //axios发送ajax
+                //axios.get('url').then(function(response){
+                //成功时回调 response响应的数据 赋值给this.user
+                //})catch(function(error){
+                //失败时回调 error失败时的错误消息
+
+                //})
+            }
+        });
+    }
+</script>
