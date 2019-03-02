@@ -46,7 +46,7 @@
             });
         });
         function add() {
-            location.href = "/GoodsInfo/Addgoods";
+            location.href = "/GoodsInfo/Addgood";
         }
         function del(id) {
             if (confirm("确认删除么？")) {
@@ -66,9 +66,6 @@
                 });
             }
         }
-        function edit(id) {
-            location.href = "/GoodsInfo/Addgoods" + id;
-        }
         function sel() {
             var txtsel = $("txtsel").val();
             $.ajax({
@@ -81,6 +78,9 @@
                     }
                 }
             })
+        }
+        function edit(id) {
+            location.href = '/GoodsInfo/Updgoods/'+ id;
         }
     </script>
 
