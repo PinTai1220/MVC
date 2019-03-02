@@ -7,6 +7,7 @@
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 <title>修改货物</title>
 <div style="margin-top:150px;margin-left:800px">
+    <h1>添加宝贝</h1>
     <input id="hidId" type="hidden" name="hidId" value="@ViewBag.Id" />
     <table class="table table-hover">
         <tr>
@@ -56,7 +57,7 @@
                 success: function (data) {
                     if (data > 0) {
                         alert("保存成功");
-                        location.href = 'GoodsInfo/Showgoods';
+                        location.href = '/GoodsInfo/Showgoods/';
                     } else {
                         alert("保存失败");
                     }
