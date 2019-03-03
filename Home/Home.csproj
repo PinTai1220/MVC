@@ -725,12 +725,12 @@
     <Content Include="Views\GoodsInfo\Showgoods.cshtml" />
     <Content Include="Views\GoodsInfo\Updgoods.cshtml" />
     <Content Include="Views\GoodsInfo\CShowgoods.cshtml" />
+    <Content Include="Views\OrderInfo\OrderInfoIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\AddressInfo\" />
     <Folder Include="Views\BuyCarInfo\" />
-    <Folder Include="Views\OrderInfo\" />
     <Folder Include="Views\ShoppingCart\" />
   </ItemGroup>
   <ItemGroup>

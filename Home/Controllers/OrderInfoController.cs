@@ -17,7 +17,7 @@ namespace Home.Controllers
         /// <returns></returns>
         // GET: OrderInfo
         [LoginAuthorization]
-        public ActionResult Index()
+        public ActionResult OrderInfoIndex()
         {
             string json = HttpClientHelper.SendRequest("api/OrderInfo/List/?str=&IndexPage=1&IndexSize=8", "Get");
             List<object> attday = JsonConvert.DeserializeObject<List<object>>(json);
