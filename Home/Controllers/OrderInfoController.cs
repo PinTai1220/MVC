@@ -19,8 +19,8 @@ namespace Home.Controllers
         [LoginAuthorization]
         public ActionResult OrderInfoIndex()
         {
-            string json = HttpClientHelper.SendRequest("api/OrderInfo/List/?str=&IndexPage=1&IndexSize=8", "Get");
-            List<object> attday = JsonConvert.DeserializeObject<List<object>>(json);
+            string json = HttpClientHelper.SendRequest("api/OrderInfo/List?str=&PageIndex=1&PageSize=4&state=1", "Get");
+            List<object> attday = JsonConvert.DeserializeObject<List<object>>(JsonConvert.DeserializeObject<string>(json));
             ViewBag.att = attday;
             return View();
         }

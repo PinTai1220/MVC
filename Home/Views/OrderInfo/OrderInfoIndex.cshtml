@@ -7,7 +7,7 @@
 
 <h2>订单</h2>
 <div style="margin-top:70px;margin-left:300px">
-    <table>
+    <table class=" table table-bordered">
         <thead>
             <tr>
                 <th>编号</th>
@@ -21,19 +21,46 @@
                 <th>创建时间</th>
             </tr>
         </thead>
-        @foreach (dynamic item in sourse)
+        @if (sourse != null)
         {
-            <tr>
-                <td>@item.OrderId</td>
-                <td>@item.OrderNum</td>
-                <td>@item.OTGName</td>
-                <td>@item.OTGPhone</td>
-                <td>@item.OTGAddress</td>
-                <td>@item.SCID</td>
-                <td>@item.OGoodName</td>
-                <td>@item.OrderState</td>
-                <td>@item.OrderCreateTime</td>
-            </tr>
+            foreach (dynamic item in sourse)
+            {
+                <tr>
+                    <td>@item.OrderId</td>
+                    <td>@item.OrderNum</td>
+                    <td>@item.OTGName</td>
+                    <td>@item.OTGPhone</td>
+                    <td>@item.OTGAddress</td>
+                    <td>@item.SCID</td>
+                    <td>@item.OGoodName</td>
+                    <td>@if (item.OrderState==1)
+                    {
+                        @:待付款
+                    }
+                    else if(item.OrderState==2)
+                    {
+                        @:已付款
+                    }
+                    else if(item.OrderState==3)
+                    {
+                        @:已发货
+                    }
+                    else if(item.OrderState==4)
+                    {
+                        @:已接收
+                    }
+                    else if(item.OrderState==5)
+                    {
+                        @:已退款
+                    }
+                    else if(item.OrderState==0)
+                    {
+                        @:已删除
+                    }
+                    </td>
+                    <td>@item.OrderCreateTime</td>
+                </tr>
+            }
         }
     </table>
 </div>
