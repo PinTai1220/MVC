@@ -4,37 +4,44 @@
     Layout = "~/Views/Shared/ParentView.cshtml";
 }
 
-
-<script src="~/JS/bootstrap.js"></script>
+<!DOCTYPE html>
 <script src="~/Scripts/jquery-3.3.1.js"></script>
-<div style="margin-top:70px;margin-left:300px">
-    <h1>仓库中的宝贝</h1>
-    <input id="txtsel" type="text" class="control-label col-md-2" />
-    <input id="ButSel" type="button" value="搜索" class="btn btn-default" onclick="sel()" />　
-    <input id="ButAdd" type="button" value="添加" class="btn btn-default" onclick="add()" />
+<script src="~/JS/bootstrap.js"></script>
 
-    <table class=" table table-responsive">
-        <thead>
-            <tr>
-                <th>商品id</th>
-                <th>商品图片</th>
-                <th>商品名称</th>
-                <th>商品简介</th>
-                <th>商品销售量</th>
-                <th>商品数量</th>
-                <th>商品价格</th>
-                <th>商品类型</th>
-                <th>商品状态</th>
-                <th>操作</th>
-            </tr>
-        </thead>
-        <tbody id="tb"></tbody>
-    </table>
-</div>
+<html>
+<head>
+</head>
+<body>
+    <div style="margin-top:70px;margin-left:300px">
+        <h1>仓库中的宝贝</h1>
+        <input id="txtsel" type="text" class="control-label col-md-2" />
+        <input id="ButSel" type="button" value="搜索" class="btn btn-default" onclick="sel()" />
+        <input id="ButAdd" type="button" value="添加" class="btn btn-default" onclick="add()" />
+
+        <table class=" table table-responsive">
+            <thead>
+                <tr>
+                    <th>商品id</th>
+                    <th>商品图片</th>
+                    <th>商品名称</th>
+                    <th>商品简介</th>
+                    <th>商品销售量</th>
+                    <th>商品数量</th>
+                    <th>商品价格</th>
+                    <th>商品类型</th>
+                    <th>商品状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="tb"></tbody>
+        </table>
+    </div>
+</body>
+</html>
 <script>
     function LoadData(str) {
         $.ajax({
-            url: 'http://localhost:54217/api/GoodsInfo/SelectPart?str='+str+'&Pageindex=1&Pagesize=5&state=1',
+            url: 'http://localhost:54217/api/GoodsInfo/SelectPart?str=' + str + '&Pageindex=1&Pagesize=5&state=2',
             type: 'get',
             dataType: 'text',
             success: function (data) {
@@ -55,7 +62,7 @@
     function Up(id) {
         if (confirm("确认上架么？")) {
             $.ajax({
-                url: 'http://localhost:54217/api/GoodsInfo/GoodStateUpt?id=' + id + '&state=2',
+                url: 'http://localhost:54217/api/GoodsInfo/GoodStateUpt?id=' + id + '&state=1',
                 type: 'post',
                 dataType: 'text',
                 success: function (data) {
@@ -69,7 +76,7 @@
                 }
             });
         }
-    }function del(id) {
+    } function del(id) {
         if (confirm("确认删除么？")) {
             $.ajax({
                 url: 'http://localhost:54217/api/GoodsInfo/GoodStateUpt?id=' + id + '&state=0',
@@ -88,7 +95,7 @@
         }
     }
     function edit(id) {
-        location.href = "/GoodsInfo/Updgoods" + id;
+        location.href = "/GoodsInfo/Updgoods/" + id;
     }
     function sel() {
         var txtsel = $("#txtsel").val();

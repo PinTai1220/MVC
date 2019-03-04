@@ -3,8 +3,9 @@
         ViewBag.Title = "Showgoods";
         Layout = "~/Views/Shared/ParentView.cshtml";
     }
+<script src="~/Scripts/jquery-3.3.1.js"></script>
     <script src="~/JS/bootstrap.js"></script>
-    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    
     <div style="margin-top:70px;margin-left:300px">
         <h1>出售中的宝贝</h1>
         <input id="txtsel" type="text" placeholder="商品名称" class="control-label col-md-2" />
@@ -30,7 +31,7 @@
     <script>
         function LoadData(str) {
             $.ajax({
-                url: 'http://localhost:54217/api/GoodsInfo/SelectPart?str=' + str + '&Pageindex=1&Pagesize=5&state=2',
+                url: 'http://localhost:54217/api/GoodsInfo/SelectPart?str=' + str + '&Pageindex=1&Pagesize=5&state=1',
                 type: 'get',
                 dataType: 'text',
                 success: function (data) {
@@ -51,7 +52,7 @@
         function Up(id) {
             if (confirm("确认下架么？")) {
                 $.ajax({
-                    url: 'http://localhost:54217/api/GoodsInfo/GoodStateUpt?id=' + id + '&state=1',
+                    url: 'http://localhost:54217/api/GoodsInfo/GoodStateUpt?id=' + id + '&state=2',
                     type: 'post',
                     dataType: 'text',
                     success: function (data) {
@@ -67,7 +68,7 @@
             }
         }
         function edit(id) {
-            location.href = "/GoodsInfo/Updgoods" + id;
+            location.href = "/GoodsInfo/Updgoods/" + id;
         }
         function sel() {
             var txtsel = $("#txtsel").val();

@@ -3,43 +3,49 @@
     ViewBag.Title = "Addgood";
     Layout = "~/Views/Shared/ParentView.cshtml";
 }
-<script src="~/Scripts/bootstrap.js"></script>
+<title>添加货物</title>
+<!DOCTYPE html>
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-<title>修改货物</title>
-<div style="margin-top:150px;margin-left:800px">
-    <h1>添加宝贝</h1>
-    <input id="hidId" type="hidden" name="hidId" value="@ViewBag.Id" />
-    <table class="table table-hover">
-        <tr>
-            <td>商品图片：</td>
-            <td><input id="txtGoodPhotoPath" type="file" /></td>
-        </tr>
-        <tr>
-            <td>商品名称：</td>
-            <td><input id="txtGoodName" type="text" /></td>
-        </tr>
-        <tr>
-            <td>商品简介：</td>
-            <td><input id="txtGoodInfo" type="text" /></td>
-        </tr>
-        <tr>
-            <td>商品数量：</td>
-            <td><input id="txtGoodSum" type="text" /></td>
-        </tr>
-        <tr>
-            <td>商品价格：</td>
-            <td><input id="txtGoodPrice" type="text" /></td>
-        </tr>
-        <tr>
-            <td>商品类型：</td>
-            <td><input id="txtGTID" type="text" /></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><input id="Button1" type="button" value="保存" class="btn btn-default" onclick="save()" />　　<input id="Button1" type="button" value="返回" class="btn btn-default" /></td>
-        </tr>
-    </table>
-</div>
+<script src="~/Scripts/bootstrap.js"></script>
+<html>
+<head>
+</head>
+<body>
+    <div style="margin-top:150px;margin-left:800px">
+        <h1>添加宝贝</h1>
+        <table class="table table-hover">
+            <tr>
+                <td>商品图片：</td>
+                <td><input id="txtGoodPhotoPath" type="file" /></td>
+            </tr>
+            <tr>
+                <td>商品名称：</td>
+                <td><input id="txtGoodName" type="text" /></td>
+            </tr>
+            <tr>
+                <td>商品简介：</td>
+                <td><input id="txtGoodInfo" type="text" /></td>
+            </tr>
+            <tr>
+                <td>商品数量：</td>
+                <td><input id="txtGoodSum" type="text" /></td>
+            </tr>
+            <tr>
+                <td>商品价格：</td>
+                <td><input id="txtGoodPrice" type="text" /></td>
+            </tr>
+            <tr>
+                <td>商品类型：</td>
+                <td><input id="txtGTID" type="text" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input id="Button1" type="button" value="保存" class="btn btn-default" onclick="save()" />　　<input id="Button1" type="button" value="返回" class="btn btn-default" /></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
 <script>
     $(function () {
         $("#Button1").click(function myfunction() {

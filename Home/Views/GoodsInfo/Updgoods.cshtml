@@ -3,22 +3,67 @@
     ViewBag.Title = "Updgoods";
     Layout = "~/Views/Shared/ParentView.cshtml";
 }
-<!DOCTYPE html>
-<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<title>修改货物</title>
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>修改货物</title>
-</head>
-<body>
-    <div>
+<script src="~/Scripts/bootstrap.js"></script>
+<script>
+    //反填
+    $(function () {
+
+
+        var Id = $("#hidId").val();
+        $.ajax({
+            url: 'http://localhost:54217/api/GoodsInfo/SelectByIdGood/' + Id,
+            type: 'get',
+            dataType: 'json',
+            success: function (data) {
+                if (data != null) {
+                    //$("#txtGoodPhotoPath").val(data.txtGoodPhotoPath);
+                    $("#txtGoodName").val(data.GoodName);
+                    $("#txtGoodInfo").val(data.GoodInfo);
+                    $("#txtGoodSellSum").val(data.GoodSellSum);
+                    $("#txtGoodSum").val(data.GoodSum);
+                    $("#txtGoodPrice").val(data.GoodPrice);
+                    $("#txtGTID").val(data.GTID);
+                    $(".rad[value='" + (data.GoodState == true ? '上架' : '下架') + "']").prop("checked", true);
+                    $("#txtGoodCreateTime").val(data.GoodCreateTime);
+                }
+            }
+        });
+    });
+    function save() {
+        //修改
+        var txtGoodPhotoPath = $("#txtGoodPhotoPath").val();
+        var txtGoodName = $("#txtGoodName").val();
+        var txtGoodInfo = $("#txtGoodInfo").val();
+        var txtGoodSellSum = $("#txtGoodSellSum").val();
+        var txtGoodSum = $("#txtGoodSum").val();
+        var txtGoodPrice = $("#txtGoodPrice").val();
+        var txtGTID = $("#txtGTID").val();
+        var txtGoodState = $(".rad:checked").val();
+        var txtGoodCreateTime = $("#txtGoodCreateTime").val();
+        $.ajax({
+            url: "",
+            type: "put",
+            datatype: "text",
+            data: { GoodPhotoPath: txtGoodPhotoPath, GoodName: txtGoodName, GoodInfo: txtGoodInfo, GoodSellSum: txtGoodSellSum, GoodSum: txtGoodSum, GoodPrice: txtGoodPrice, GTID: txtGTID, GoodState: txtGoodState, GoodCreateTime: txtGoodCreateTime },
+            success: function data() {
+                if (data > 0) {
+                    alert("保存成功");
+                } else {
+                    alert("保存失败");
+                }
+            }
+        })
+    }
+</script>
+    <div style="margin-top:150px;margin-left:800px">
         <input id="hidId" type="hidden" name="hidId" value="@ViewBag.Id" />
-        <table class="table table-hover">
-            <tr>
-                <td>商品图片：</td>
-                <td><input id="txtGoodPhotoPath" type="file" /></td>
-            </tr>
+        <table class="table table-bordered">
+            @*<tr>
+                    <td>商品图片：</td>
+                    <td><input id="txtGoodPhotoPath" type="file" /></td>
+                </tr>*@
             <tr>
                 <td>商品名称：</td>
                 <td><input id="txtGoodName" type="text" /></td>
@@ -57,52 +102,8 @@
             </tr>
         </table>
     </div>
-</body>
-</html>
-<script>
-    $.ajax({
-        url: '' + Id,
-        type: 'get',
-        dataType: 'json',
-        success: function (data) {
-            if (data != null) {
-                $("#txtGoodPhotoPath").val(data.txtGoodPhotoPath);
-                $("#txtGoodName").val(data.txtGoodName);
-                $("#txtGoodInfo").val(data.txtGoodInfo);
-                $("#txtGoodSellSum").val(data.txtGoodSellSum);
-                $("#txtGoodSum").val(data.txtGoodSum);
-                $("#txtGoodPrice").val(data.txtGoodPrice);
-                $("#txtGTID").val(data.txtGTID);
-                $(".rad[value='" + (data.txtGoodState == true ? '上架' : '下架') + "']").prop("checked", true);
-                $("#txtGoodCreateTime").val(data.txtGoodCreateTime);
-            }
-        }
-    });
-    var txtGoodPhotoPath = $("txtGoodPhotoPath").val();
-    var txtGoodName = $("txtGoodName").val();
-    var txtGoodInfo = $("txtGoodInfo").val();
-    var txtGoodSellSum = $("txtGoodSellSum").val();
-    var txtGoodSum = $("txtGoodSum").val();
-    var txtGoodPrice = $("txtGoodPrice").val();
-    var txtGTID = $("txtGTID").val();
-    var txtGoodState = $(".rad:checked").val();
-    var txtGoodCreateTime = $("txtGoodCreateTime").val();
-    function save() {
-        $.ajax({
-            url: "",
-            type: "put",
-            datatype: "text",
-            data: { GoodPhotoPath: txtGoodPhotoPath, GoodName: txtGoodName, GoodInfo: txtGoodInfo, GoodSellSum: txtGoodSellSum, GoodSum: txtGoodSum, GoodPrice: txtGoodPrice, GTID: txtGTID, GoodState: txtGoodState, GoodCreateTime: txtGoodCreateTime },
-            success: function data() {
-                if (data > 0) {
-                    alert("保存成功");
-                } else {
-                    alert("保存失败");
-                }
-            }
-        })
-    }
-</script>
+
+
 
 
 
