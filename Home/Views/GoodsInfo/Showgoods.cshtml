@@ -74,6 +74,20 @@
             var txtsel = $("#txtsel").val();
             LoadData(txtsel);
         }
+        $(function () {
+            $.ajax({
+                url: 'http://localhost:54217/api/GoodType/TypeList',
+                type: 'get',
+                data: {},
+                dataType: 'json',
+                success: function (data) {
+                    var newdata = JSON.parse(data);
+                    for (var i = 0; i < newdata.length; i++) {
+                        $("#Select1").append("<option value='" + newdata[i].GoodTypeId + "'>" + newdata[i].GoodTypeName + "</option>");
+                    }
+                }
+            })
+        })
     </script>
 
 
